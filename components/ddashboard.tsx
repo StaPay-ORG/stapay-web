@@ -218,16 +218,16 @@ export function Dashboard() {
                         <TableCell>{trade.symbol}</TableCell>
                         <TableCell>
                           <Badge
-                            variant={trade.type === "Buy" ? "success" : "error"}
+                          // variant={trade.type === "Buy" ? "success" : "error"}
                           >
                             {trade.type}
                           </Badge>
                         </TableCell>
                         <TableCell>
                           <Badge
-                            variant={
-                              trade.status === "Filled" ? "success" : "warning"
-                            }
+                          // variant={
+                          //   trade.status === "Filled" ? "success" : "warning"
+                          // }
                           >
                             {trade.status}
                           </Badge>
