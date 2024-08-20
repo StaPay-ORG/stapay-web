@@ -47,6 +47,7 @@ import {
   TableCell,
 } from "@/components/ui/table";
 import { Badge } from "@/components/ui/badge";
+import { ConnectButton } from "@suiet/wallet-kit";
 
 export function Dashboard() {
   const [search, setSearch] = useState("");
@@ -153,13 +154,11 @@ export function Dashboard() {
       <div className="flex-1">
         <header className="sticky top-0 z-10 bg-gradient-to-r from-[#240046] to-[#0e011a] px-4 py-3 shadow-md md:px-8">
           <div className="container mx-auto flex items-center justify-between">
-            <Link href="#" className="text-2xl font-bold" prefetch={false}>
+            <Link href="/" className="text-2xl font-bold" prefetch={false}>
               <img width={160} height={"auto"} src="/logo.jpg" alt="" />
             </Link>
 
-            <Button className="rounded-full bg-[#FFCC00] px-6 py-2 text-[#240046] shadow-lg transition-transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-[#FFCC00] focus:ring-offset-2">
-              Connect
-            </Button>
+            <ConnectButton />
           </div>
         </header>
         <main className="p-4 md:p-6">

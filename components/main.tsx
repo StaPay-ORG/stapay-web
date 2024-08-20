@@ -34,13 +34,15 @@ export function Main() {
     <div className="flex min-h-screen flex-col bg-gradient-to-r from-[#240046] to-[#0e011a] text-[#FFCC00]">
       <header className="sticky top-0 z-10 bg-gradient-to-r from-[#240046] to-[#0e011a] px-4 py-3 shadow-md md:px-8">
         <div className="container mx-auto flex items-center justify-between">
-          <Link href="#" className="text-2xl font-bold" prefetch={false}>
+          <Link href="/" className="text-2xl font-bold" prefetch={false}>
             <img width={160} height={"auto"} src="/logo.jpg" alt="" />
           </Link>
 
-          <Button className="rounded-full bg-[#FFCC00] px-6 py-2 text-[#240046] shadow-lg transition-transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-[#FFCC00] focus:ring-offset-2">
-            Lunch App
-          </Button>
+          <Link href="/dashboard">
+            <Button className="rounded-full bg-[#FFCC00] px-6 py-2 text-[#240046] shadow-lg transition-transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-[#FFCC00] focus:ring-offset-2">
+              Lunch App
+            </Button>
+          </Link>
         </div>
       </header>
       <main className="flex-1">
@@ -58,15 +60,11 @@ export function Main() {
                   Use staking to cover costs instead of paying directly
                 </p>
                 <div className="flex space-x-4">
-                  <Button className="rounded-full bg-[#FFCC00] px-6 py-2 text-[#240046] shadow-lg transition-transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-[#FFCC00] focus:ring-offset-2">
-                    Get Started
-                  </Button>
-                  <Button
-                    variant="outline"
-                    className="rounded-full px-6 py-2 transition-colors hover:bg-[#FFCC00] hover:text-[#240046] focus:outline-none focus:ring-2 focus:ring-[#FFCC00] focus:ring-offset-2"
-                  >
-                    Learn More
-                  </Button>
+                  <Link href="/dashboard">
+                    <Button className="rounded-full bg-[#FFCC00] px-6 py-2 text-[#240046] shadow-lg transition-transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-[#FFCC00] focus:ring-offset-2">
+                      Get Started
+                    </Button>
+                  </Link>
                 </div>
               </div>
               <div className="relative">
@@ -117,8 +115,8 @@ export function Main() {
                   className="text-lg leading-relaxed"
                   style={{ color: "#f9e8a1" }}
                 >
-                  Model can be applied beyond content creation,
-                  opening doors to vast markets like education.
+                  Model can be applied beyond content creation, opening doors to
+                  vast markets like education.
                 </p>
               </div>
             </div>
@@ -127,7 +125,7 @@ export function Main() {
       </main>
       <footer className="bg-gradient-to-r from-[#240046] to-[#0e011a] py-8 text-center text-sm text-[#FFCC00]">
         <div className="container mx-auto px-4 md:px-8">
-          <p>&copy; 2023 Stapay. All rights reserved.</p>
+          <p>&copy; 2024 Stapay. All rights reserved.</p>
         </div>
       </footer>
     </div>
