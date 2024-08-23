@@ -26,17 +26,7 @@ To read more about using these font, please visit the Next.js documentation:
 "use client";
 import Link from "next/link";
 import { useState, useMemo } from "react";
-import { Input } from "@/components/ui/input";
-import { Select } from "@/components/ui/select";
-import { Button } from "@/components/ui/button";
-import {
-  DropdownMenu,
-  DropdownMenuTrigger,
-  DropdownMenuContent,
-  DropdownMenuRadioGroup,
-  DropdownMenuRadioItem,
-  DropdownMenuSeparator,
-} from "@/components/ui/dropdown-menu";
+
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
 import {
   Table,
@@ -47,7 +37,8 @@ import {
   TableCell,
 } from "@/components/ui/table";
 import { Badge } from "@/components/ui/badge";
-import { ConnectButton } from "@suiet/wallet-kit";
+import { ConnectButton, useAutoConnectWallet } from "@mysten/dapp-kit";
+import { ConnectedAccount } from "./ui/ConnectedAccount";
 
 export function Dashboard() {
   const [search, setSearch] = useState("");
@@ -149,6 +140,9 @@ export function Dashboard() {
       return acc + trade.price * trade.volume;
     }
   }, 0);
+
+  const autoConnectionStatus = useAutoConnectWallet();
+
   return (
     <div className="flex min-h-screen flex-col bg-gradient-to-r from-[#240046] to-[#0e011a] text-[#FFCC00]">
       <div className="flex-1">
@@ -161,6 +155,9 @@ export function Dashboard() {
             <ConnectButton />
           </div>
         </header>
+
+        <ConnectedAccount></ConnectedAccount>
+
         <main className="p-4 md:p-6">
           <div className="grid grid-cols-1 gap-4 md:grid-cols-3">
             <Card>
@@ -217,20 +214,10 @@ export function Dashboard() {
                         <TableCell>{trade.date}</TableCell>
                         <TableCell>{trade.symbol}</TableCell>
                         <TableCell>
-                          <Badge
-                          // variant={trade.type === "Buy" ? "success" : "error"}
-                          >
-                            {trade.type}
-                          </Badge>
+                          <Badge variant={"default"}>{trade.type}</Badge>
                         </TableCell>
                         <TableCell>
-                          <Badge
-                          // variant={
-                          //   trade.status === "Filled" ? "success" : "warning"
-                          // }
-                          >
-                            {trade.status}
-                          </Badge>
+                          <Badge variant={"default"}>{trade.status}</Badge>
                         </TableCell>
                         <TableCell>${trade.price.toFixed(2)}</TableCell>
                         <TableCell>{trade.volume.toFixed(2)}</TableCell>

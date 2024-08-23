@@ -7,7 +7,7 @@ const Card = React.forwardRef<
   React.HTMLAttributes<HTMLDivElement>
 >(({ className, ...props }, ref) => (
   <div
-    style={{ opacity: "0.8" }}
+    style={{ opacity: "0.9" }}
     ref={ref}
     className={cn(
       "rounded-lg border bg-card text-card-foreground shadow-sm",

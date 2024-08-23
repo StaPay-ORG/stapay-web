@@ -69,7 +69,7 @@ export function Main() {
               </div>
               <div className="relative">
                 <img
-                  src="https://naviprotocol.io/_next/image?url=%2Fassets%2Findex%2Fproduct-navi.6a74fa30.png%3Fv%3D1&w=1920&q=75"
+                  src="/sui.jpg"
                   alt="Hero Image"
                   width={600}
                   // height={600}
